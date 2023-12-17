@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <style>
+        div{
+            text-align: center;
+            margin: 5px;
+        }
+        .container{
+            position: relative;
+            left: 40%;
+            width:20%;
+            border: 1px solid black;
+            background-color: blue;
+        }
+        .row{
+            display: grid;
+            padding: 20px;
+            grid-template-columns: 1fr 1fr 1fr 1fr ;
+            
+        }
+        .frow{
+            display: grid;
+            padding: 20px;
+            grid-template-columns: 3fr 1fr;
+            
+        }
+        .frow .input{
+            border: 1px solid black;
+        }
+
+        .row div,.frow div{
+            border: 1px solid black;
+            background-color: red;
+        }
+        h2{
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>CALCULATOR</h2>
+    <div class="container">
+        <div class="frow">
+            <div class="input" id="input"></div>
+            <div class="clear"   onclick="func2()">c</div>
+        </div>
+        <div class="row">
+            <div onclick="func('1')">1</div>
+            <div onclick="func('2')">2</div>
+            <div onclick="func('3')">3</div>
+            <div onclick="func('/')">/</div>
+        </div>
+        <div class="row">
+            <div onclick="func('4')">4</div>
+            <div onclick="func('5')">5</div>
+            <div onclick="func('6')">6</div>
+            <div onclick="func('*')">*</div>
+        </div>
+        <div class="row">
+            <div onclick="func('7')">7</div>
+            <div onclick="func('8')">8</div>
+            <div onclick="func('9')">9</div>
+            <div onclick="func('-')">-</div>
+        </div>
+        <div class="row">
+            <div onclick="func('0')">0</div>
+            <div onclick="func('.')">.</div>
+            <div onclick="action()">=</div>
+            <div onclick="func('+')">+</div>
+        </div>
+    </div>
+    <script>
+        function func(l){
+            document.getElementById('input').innerHTML+=l;
+        }
+        function func2(){
+            document.getElementById('input').innerHTML='';
+        }
+
+        function action(){
+            var z=document.getElementById('input').innerHTML
+            let y=z.split(/[+-/*]/)
+            if(z.includes('+')){
+                y[0]=y[0]-0;
+                y[1]=y[1]-0;
+                let m=y[0]+y[1];
+                document.getElementById('input').innerHTML=m;
+            }
+            if(z.includes('-')){
+                let m=y[0]-y[1];
+                document.getElementById('input').innerHTML=m;
+            }
+            if(z.includes('*')){
+                let m=y[0]*y[1];
+                document.getElementById('input').innerHTML=m;
+            }
+            if(z.includes('/')){
+                let m=y[0]/y[1];
+                document.getElementById('input').innerHTML=m;
+            }
+        }
+    </script>
+</body>
+</html>
