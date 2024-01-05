@@ -4,9 +4,6 @@
 <head>
     <title>Document</title>
     <style>
-        * {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M142.467%2c240.98C188.19%2c242.531%2c239.912%2c241.621%2c264.839%2c203.259C291.326%2c162.498%2c280.653%2c108.934%2c255.167%2c67.54C230.98%2c28.255%2c188.601%2c4.623%2c142.467%2c4.502C96.114%2c4.381%2c51.689%2c26.674%2c28.74%2c66.947C5.999%2c106.855%2c8.552%2c156.967%2c33.678%2c195.417C56.729%2c230.691%2c100.353%2c239.551%2c142.467%2c240.98' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M442.7997353320076 74.38909371962562L621.1073396305508 106.00477902967506 569.5698709199805-43.670898207440274z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1023.5437072297401 164.57517767118313L909.67946135763 58.395050623752525 803.4993343101994 172.2592964958626 917.3635801823095 278.43942354329323z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1309.342%2c152.99C1344.825%2c151.58%2c1379.29%2c138.915%2c1398.496%2c109.046C1419.393%2c76.549%2c1425.101%2c35.326%2c1406.927%2c1.232C1387.725%2c-34.791%2c1350.092%2c-60.604%2c1309.342%2c-58.203C1271.591%2c-55.979%2c1248.93%2c-20.971%2c1229.83%2c11.667C1210.443%2c44.794%2c1188.192%2c83.201%2c1207.013%2c116.653C1226.036%2c150.464%2c1270.578%2c154.53%2c1309.342%2c152.99' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M744.7355320034992 292.7891783810708L605.6386037923879 372.92017468973563 725.9213629480658 445.1933478143592z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M772.7627219703598 328.5218142625662L609.0412311157387 293.72173709501794 737.9626448028116 492.24330511718733z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-        }
 
         div {
             text-align: center;
@@ -25,6 +22,7 @@
             display: grid;
             padding: 20px;
             grid-template-columns: 1fr 1fr 1fr 1fr;
+            
         }
 
         .frow {
@@ -40,10 +38,11 @@
 
         .row div,
         .frow div {
-            border: 1px solid black;
-            background-color: red;
+            
             padding: 20px;
             font-size: 25px;
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
 
         h2 {
@@ -51,9 +50,7 @@
             text-align: center;
         }
 
-        * {
-            background-color: aqua;
-        }
+        
     </style>
 </head>
 
@@ -100,35 +97,35 @@
         function action() {
             var z = document.getElementById('input').innerHTML
 
-            for(let i=1;i<z.length;i++){
-                if(z.charAt(i)=='+'||z.charAt(i)=='-'||z.charAt(i)=='*'||z.charAt(i)=='/'){
-                    var m=i;
+            for (let i = 1; i < z.length; i++) {
+                if (z.charAt(i) == '+' || z.charAt(i) == '-' || z.charAt(i) == '*' || z.charAt(i) == '/') {
+                    var m = i;
                     break;
                 }
             }
-            var a= z.substring(0,m);
-            var b= z.charAt(m);
-            var c= z.substring(m+1);
-            a=a-0;
-            c=c-0;
-            if(b=='+'){
-               let add=a+c;
-                document.getElementById('input').innerHTML=add;
+            var a = z.substring(0, m);
+            var b = z.charAt(m);
+            var c = z.substring(m + 1);
+            a = a - 0;
+            c = c - 0;
+            if (b == '+') {
+                let add = a + c;
+                document.getElementById('input').innerHTML = add;
             }
-            else if(b=='-'){
-              let  sub=a-c;
-              document.getElementById('input').innerHTML=sub;
+            else if (b == '-') {
+                let sub = a - c;
+                document.getElementById('input').innerHTML = sub;
             }
-            else if(b=='*'){
-               let mul=a*c;
-               document.getElementById('input').innerHTML=mul;
+            else if (b == '*') {
+                let mul = a * c;
+                document.getElementById('input').innerHTML = mul;
             }
-            else{
-               let div=a/c;
-               document.getElementById('input').innerHTML=div;
+            else {
+                let div = a / c;
+                document.getElementById('input').innerHTML = div;
             }
         }
-        
+
     </script>
 </body>
 
