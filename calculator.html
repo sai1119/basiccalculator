@@ -28,7 +28,7 @@
         .frow {
             display: grid;
             padding: 20px;
-            grid-template-columns: 3fr 1fr;
+            grid-template-columns: 3fr 1fr 1fr;
 
         }
 
@@ -60,6 +60,7 @@
         <div class="frow">
             <div class="input" id="input"></div>
             <div class="clear" onclick="func2()">c</div>
+            <div onclick="func3()">del</div>
         </div>
         <div class="row">
             <div onclick="func('1')">1</div>
@@ -124,6 +125,14 @@
                 let div = a / c;
                 document.getElementById('input').innerHTML = div;
             }
+        }
+
+        function func3(){
+            let a=document.getElementById('input').innerHTML
+            
+            let z=a.slice(0 , a.length-1)
+           
+            document.getElementById('input').innerHTML=z
         }
 
     </script>
